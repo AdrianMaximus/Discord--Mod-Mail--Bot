@@ -16,13 +16,13 @@ bot = commands.Bot(
 @bot.event
 async def on_message(message):
   try:
-    gd = await bot.fetch_guild(1052623398724968559)
-    category1 = bot.get_channel(1053250353233133569) 
+    gd = await bot.fetch_guild(paste your guild id here with brackets)
+    category1 = bot.get_channel(paste your category id here with brackets) 
 
     #### TICKET CLOSE FUNCTION ####
-    if message.channel in category1.channels and message.channel.id != 1054601996830781540 and message.author.id != 1052620627065962507 and message.content == '?close':
-      category = bot.get_channel(1053250353233133569) 
-      ch = await bot.fetch_channel(1054661681436971008)
+    if message.channel in category1.channels and message.channel.id != (paste ur log channel id without brackets) and message.author.id != (paste your bot id wihtout brackets) and message.content == '?close':
+      category = bot.get_channel(paste your category id here with brackets) 
+      ch = await bot.fetch_channel(paste your log channel id here with brackets)
       id = message.channel.topic
       usr = await bot.fetch_user(id)
 
@@ -35,7 +35,7 @@ async def on_message(message):
       await message.channel.delete()
 
       #### MODERATOR REPLY FUNCTION ####
-      if message.channel in category1.channels and message.channel.id != 1054601996830781540 and message.author.id != 1052620627065962507 and message.content != '?close':
+      if message.channel in category1.channels and message.channel.id != (paste ur log channel id without brackets)  and message.author.id != (paste your bot id wihtout brackets) and message.content != '?close':
 
         usrid = message.channel.topic
       usr = await bot.fetch_user(usrid)
@@ -55,7 +55,7 @@ async def on_message(message):
       await usr.send(embed=embed7)
 
       if message.channel.type == discord.ChannelType.private:
-        if message.author.id != 1052620627065962507:
+        if message.author.id != (paste your bot id wihtout brackets) :
 
           #### CHECKING IF USER HAS ALREADY CREATED A TICKET ####
           topics = []
@@ -104,7 +104,7 @@ async def on_message(message):
 
           ### BOT LOGS ### WHERE THE LOGGINGS WILL TAKE PLACE 
               
-          ch = await bot.fetch_channel(1054661681436971008)
+          ch = await bot.fetch_channel(paste your log channel id with brackets)
               
           embed=discord.Embed(title='TICKET CREATED',description=f'New ticket created by user {message.author.name}, [CLICK ME](https://discord.com/channels/{gd.id}/{m1.id}) to access ticket', color =0x00FF00)
               
